@@ -26,7 +26,4 @@ class Url {
             }
         }
     }
-    function redirect($link) {
-        // to do return exploded url and return $_GET[0];
-    }
 }

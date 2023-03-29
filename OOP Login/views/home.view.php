@@ -11,7 +11,7 @@
    include_once 'inc/topbar.inc.php';
    ?>
    <div class="layout-content">
-    Home content
+    Home contents
    </div>
    <?php include_once 'inc/footer.inc.php';?>
 </body>

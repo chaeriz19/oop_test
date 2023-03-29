@@ -10,9 +10,9 @@ class Account {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 if ($pw == $row['dbPassword'] && $un == $row['dbUsername']) {
-                    $_SESSION['is-loggedin'] = true;
+                    // Set session variables
+                    $_SESSION['is-loggedin'] = true;$_SESSION['user-id'] = $row['id'];
                     $_SESSION['username-loggedin'] = $un;
-                    $_SESSION['user-id'] = $row['id'];
                     $include->header("home");
                 } else {
                     $_SESSION['login-message'] = "invalid username and password combination";
@@ -22,7 +22,7 @@ class Account {
         } else {
             $_SESSION['login-message'] = "user not found";
             $include->header("login");
-        }
+        }   
     }
     public function Logout() {
         $include = new Inc();
